@@ -1,7 +1,5 @@
 # CodeQuest - Pensamento Computacional
 
-Versão atualizada com uma fase prática inicial sobre os 4 pilares do pensamento computacional.
-
 ## Fluxo do site
 
 1. Introdução ao pensamento computacional.
@@ -18,7 +16,3 @@ Versão atualizada com uma fase prática inicial sobre os 4 pilares do pensament
 8. Prática: desafios básicos em JavaScript.
 9. Certificado final com XP total.
 
-## Como abrir
-
-1. Extraia o arquivo ZIP.
-2. Abra o arquivo `index.html` no navegador.
