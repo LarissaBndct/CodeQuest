@@ -1,0 +1,553 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #15162c, #43215c, #0f7c80);
+  color: #ffffff;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.tela {
+  display: none;
+  width: 100%;
+  max-width: 950px;
+}
+
+.tela.ativa {
+  display: block;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+}
+
+.hero {
+  text-align: center;
+  max-width: 720px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 64px;
+  margin: 16px 0;
+}
+
+h2 {
+  margin: 8px 0 16px;
+  font-size: 34px;
+}
+
+h3 {
+  margin-bottom: 8px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+code {
+  background: rgba(0, 0, 0, 0.28);
+  padding: 4px 7px;
+  border-radius: 8px;
+  color: #ffe66d;
+}
+
+.badge {
+  display: inline-block;
+  background: #ffe66d;
+  color: #202020;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+button {
+  border: none;
+  border-radius: 14px;
+  padding: 14px 20px;
+  margin: 6px;
+  background: #ffe66d;
+  color: #202020;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.04);
+  filter: brightness(1.05);
+}
+
+button.secundario {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.grid article,
+.exemplo {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.objetivo-aprendizagem {
+  background: rgba(255, 230, 109, 0.18);
+  border-left: 5px solid #ffe66d;
+  padding: 15px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.fluxo-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.fluxo-demo span:not(:nth-child(even)) {
+  background: #ffe66d;
+  color: #202020;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.topo-fase {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.status {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.status span {
+  background: rgba(255, 255, 255, 0.16);
+  padding: 10px 14px;
+  border-radius: 999px;
+}
+
+.instrucao {
+  font-size: 18px;
+}
+
+#tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(5, 64px);
+  grid-template-rows: repeat(5, 64px);
+  gap: 8px;
+  justify-content: center;
+  margin: 24px 0;
+}
+
+.celula {
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.personagem {
+  background: #ffe66d;
+}
+
+.objetivo {
+  background: #7bed9f;
+}
+
+.controles,
+.botoes-linha {
+  text-align: center;
+}
+
+.controles button {
+  width: 58px;
+  height: 58px;
+  font-size: 24px;
+}
+
+.feedback {
+  font-size: 18px;
+  font-weight: bold;
+  min-height: 28px;
+}
+
+.problema {
+  background: rgba(0, 0, 0, 0.22);
+  padding: 18px;
+  border-radius: 16px;
+  margin: 18px 0;
+}
+
+.opcoes {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.opcoes button {
+  text-align: left;
+  width: 100%;
+}
+
+.codigo button {
+  font-family: Consolas, monospace;
+  white-space: pre-wrap;
+}
+
+.resposta {
+  min-height: 80px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.bloco-resposta {
+  display: inline-block;
+  background: #ffe66d;
+  color: #202020;
+  padding: 10px 14px;
+  border-radius: 12px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.certificado {
+  text-align: center;
+  background: #ffffff;
+  color: #222;
+}
+
+.certificado h2 {
+  font-size: 42px;
+  color: #43215c;
+}
+
+.certificado input {
+  width: min(420px, 100%);
+  padding: 14px;
+  border: 2px solid #43215c;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 22px;
+  margin: 16px 0;
+}
+
+.xp-final {
+  font-size: 22px;
+}
+
+@media (max-width: 700px) {
+  h1 {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  #tabuleiro {
+    grid-template-columns: repeat(5, 48px);
+    grid-template-rows: repeat(5, 48px);
+  }
+
+  .celula {
+    font-size: 24px;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .app {
+    padding: 0;
+  }
+
+  .certificado {
+    box-shadow: none;
+    border: 5px solid #43215c;
+  }
+
+  .certificado button {
+    display: none;
+  }
+}
+
+
+/* Gamificação: jornada, progresso e badges */
+.hud-jornada {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(900px, calc(100% - 32px));
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 18px;
+  padding: 12px 16px;
+  backdrop-filter: blur(10px);
+}
+
+.hud-topo,
+.hud-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hud-status {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.barra-progresso {
+  width: 100%;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+#barraProgresso {
+  width: 0%;
+  height: 100%;
+  background: #ffe66d;
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
+
+.mapa-jornada {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.mapa-jornada span {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 12px;
+  font-weight: bold;
+}
+
+.badges-certificado {
+  margin: 18px auto;
+  padding: 18px;
+  border: 2px dashed #43215c;
+  border-radius: 18px;
+  max-width: 720px;
+}
+
+#badgesFinal {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.badge-final {
+  display: inline-block;
+  background: #ffe66d;
+  color: #202020;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.personagem {
+  color: #202020;
+}
+
+.app {
+  padding-top: 140px;
+}
+
+@media (max-width: 700px) {
+  .hud-jornada {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-bottom: 18px;
+  }
+
+  .app {
+    padding-top: 24px;
+  }
+
+  .mapa-jornada {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .hud-jornada {
+    display: none;
+  }
+
+  .app {
+    padding-top: 0;
+  }
+}
+
+/* Visual pirata: mapa, oceano e tesouro */
+body {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 230, 109, 0.18), transparent 24%),
+    radial-gradient(circle at 85% 12%, rgba(255, 255, 255, 0.10), transparent 20%),
+    linear-gradient(135deg, #082f49 0%, #0f766e 45%, #5b3418 100%);
+}
+
+body::before {
+  content: "⚓ 🧭 🏴‍☠️ 💎";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  font-size: 90px;
+  letter-spacing: 38px;
+  line-height: 1.8;
+  padding: 40px;
+  transform: rotate(-8deg);
+}
+
+.card {
+  background: rgba(79, 48, 21, 0.62);
+  border: 2px solid rgba(255, 214, 128, 0.45);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+.hero,
+.certificado {
+  background:
+    linear-gradient(rgba(255, 244, 214, 0.93), rgba(244, 214, 158, 0.93)),
+    repeating-linear-gradient(45deg, rgba(92, 56, 23, 0.08) 0 8px, transparent 8px 16px);
+  color: #3b250f;
+}
+
+.hero h1,
+.certificado h2 {
+  color: #5b3418;
+  text-shadow: 0 2px 0 rgba(255,255,255,0.35);
+}
+
+.badge,
+button,
+.bloco-resposta,
+.fluxo-demo span:not(:nth-child(even)),
+.badge-final {
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  color: #2b1708;
+  border: 1px solid rgba(91, 52, 24, 0.25);
+}
+
+button.secundario {
+  background: rgba(8, 47, 73, 0.55);
+  border: 1px solid rgba(255, 214, 128, 0.45);
+  color: #fff7d6;
+}
+
+.grid article,
+.exemplo,
+.problema,
+.resposta,
+.status span,
+.mapa-jornada span {
+  background: rgba(8, 47, 73, 0.42);
+  border: 1px solid rgba(255, 214, 128, 0.28);
+}
+
+.objetivo-aprendizagem {
+  background: rgba(250, 204, 21, 0.20);
+  border-left: 5px solid #facc15;
+}
+
+.hud-jornada {
+  background: rgba(59, 37, 15, 0.80);
+  border: 2px solid rgba(255, 214, 128, 0.45);
+}
+
+#barraProgresso {
+  background: linear-gradient(90deg, #facc15, #22c55e, #38bdf8);
+}
+
+#tabuleiro {
+  background: rgba(244, 214, 158, 0.18);
+  border: 3px solid rgba(255, 214, 128, 0.55);
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: inset 0 0 18px rgba(0,0,0,0.25);
+}
+
+.celula {
+  background: rgba(244, 214, 158, 0.35);
+  border: 1px dashed rgba(255, 244, 214, 0.35);
+}
+
+.personagem {
+  background: linear-gradient(135deg, #facc15, #f97316);
+  color: #1f1307;
+}
+
+.objetivo {
+  background: linear-gradient(135deg, #22c55e, #38bdf8);
+}
+
+.opcoes button:hover,
+.controles button:hover {
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.25);
+}
+
+.codigo button {
+  background: rgba(8, 47, 73, 0.78);
+  color: #fff7d6;
+  border: 1px solid rgba(255, 214, 128, 0.35);
+}
+
+.certificado {
+  border: 6px double #5b3418;
+}
+
+.badges-certificado {
+  border-color: #5b3418;
+}

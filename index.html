@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeQuest - A Jornada do Tesouro Lógico</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <div class="hud-jornada" id="hudJornada">
+      <div class="hud-topo">
+        <strong>🏴‍☠️ Jornada do Tesouro</strong>
+        <span id="textoProgresso">0% concluído</span>
+      </div>
+      <div class="barra-progresso"><div id="barraProgresso"></div></div>
+      <div class="hud-status">
+        <span>XP: <strong id="xpGlobal">0</strong></span>
+        <span>Nível: <strong id="nivelGlobal">Marinheiro</strong></span>
+        <span>Badges: <strong id="contadorBadges">0</strong>/6</span>
+      </div>
+    </div>
+    <section id="tela-inicio" class="tela ativa">
+      <div class="card hero">
+        <span class="badge">Aventura + Lógica</span>
+        <h1>CodeQuest</h1>
+        <p>
+          O Capitão Code escondeu um tesouro lendário em uma ilha misteriosa. Para encontrá-lo,
+          você precisará dominar os 4 pilares do Pensamento Computacional, resolver desafios de
+          lógica e desbloquear conquistas durante a jornada.
+        </p>
+        <div class="mapa-jornada">
+          <span>🏝️ Ilha Inicial</span>
+          <span>🧩 Pilares</span>
+          <span>🧭 Algoritmos</span>
+          <span>⚙️ Rotas em Fluxograma</span>
+          <span>💻 Programação</span>
+          <span>💎 Tesouro Final</span>
+        </div>
+        <button onclick="iniciarJogo()">Começar Jornada</button>
+      </div>
+    </section>
+
+    <section id="tela-pilares" class="tela">
+      <div class="card">
+        <h2>O Mapa Secreto do Pensamento Computacional</h2>
+        <p>
+          Pensamento computacional é como um mapa de navegação: ajuda você a resolver problemas usando raciocínio lógico, organização e criação de passos. Nesta jornada, cada pilar será uma pista para chegar ao tesouro.
+        </p>
+
+        <div class="grid">
+          <article>
+            <h3>Decomposição</h3>
+            <p>Dividir uma grande missão em tarefas menores, como separar mapa, bússola, tripulação e rota.</p>
+          </article>
+          <article>
+            <h3>Padrões</h3>
+            <p>Perceber pistas repetidas no mapa para encontrar caminhos mais seguros e rápidos.</p>
+          </article>
+          <article>
+            <h3>Abstração</h3>
+            <p>Focar nas pistas úteis e ignorar desenhos ou distrações que não levam ao tesouro.</p>
+          </article>
+          <article>
+            <h3>Algoritmos</h3>
+            <p>Criar uma sequência de ordens para o pirata chegar ao destino correto.</p>
+          </article>
+        </div>
+
+        <p class="objetivo-aprendizagem">
+          Antes de abrir o baú final, você vai treinar os 4 pilares resolvendo pistas da ilha.
+        </p>
+
+        <button onclick="irParaJogoPilares()">Ir para o jogo dos pilares</button>
+      </div>
+    </section>
+
+    <section id="tela-jogo-pilares" class="tela">
+      <div class="card">
+        <div class="topo-fase">
+          <div>
+            <span class="badge">Missão Inicial</span>
+            <h2>Mapa dos 4 Pilares</h2>
+          </div>
+          <div class="status">
+            <span>XP: <strong id="xp0">0</strong></span>
+            <span>Acertos: <strong id="acertos0">0</strong>/4</span>
+          </div>
+        </div>
+
+        <p class="instrucao">
+          Leia a pista do mapa e escolha qual pilar do pensamento computacional ajuda o pirata naquela situação.
+        </p>
+
+        <div class="problema" id="problemaPilar"></div>
+        <div id="opcoesPilar" class="opcoes"></div>
+
+        <p id="feedback0" class="feedback"></p>
+      </div>
+    </section>
+
+    <section id="tela-teoria1" class="tela">
+      <div class="card">
+        <span class="badge">Pergaminho da Fase 1</span>
+        <h2>Rotas Piratas e Sequência de Passos</h2>
+        <p>
+          Um algoritmo é uma sequência organizada de instruções para resolver um problema. Para um pirata chegar ao tesouro, ele precisa seguir ordens claras: avançar, virar, atravessar a ponte e abrir o baú.
+        </p>
+        <p>
+          Na programação acontece a mesma coisa: o computador precisa receber comandos claros, na ordem correta. Se a rota estiver errada, o pirata pode parar longe do tesouro.
+        </p>
+
+        <div class="exemplo">
+          <h3>Exemplo:</h3>
+          <ol>
+            <li>Olhar onde o pirata está no mapa.</li>
+            <li>Identificar onde está o tesouro.</li>
+            <li>Escolher os comandos de navegação.</li>
+            <li>Seguir a rota até o baú.</li>
+          </ol>
+        </div>
+
+        <p class="objetivo-aprendizagem">
+          Na prática, você irá criar uma sequência de setas para levar o pirata até o tesouro.
+        </p>
+
+        <button onclick="irParaFase1()">Ir para a prática</button>
+      </div>
+    </section>
+
+    <section id="tela-fase1" class="tela">
+      <div class="card">
+        <div class="topo-fase">
+          <div>
+            <span class="badge">Prática 1</span>
+            <h2>Mapa do Tesouro</h2>
+          </div>
+          <div class="status">
+            <span>XP: <strong id="xp1">0</strong></span>
+            <span>Acertos: <strong id="acertos1">0</strong>/3</span>
+          </div>
+        </div>
+
+        <p class="instrucao">
+          Monte uma sequência de setas para guiar o pirata até o tesouro.
+        </p>
+
+        <div id="tabuleiro"></div>
+
+        <div class="controles">
+          <button onclick="adicionarComando('cima')">↑</button>
+          <button onclick="adicionarComando('baixo')">↓</button>
+          <button onclick="adicionarComando('esquerda')">←</button>
+          <button onclick="adicionarComando('direita')">→</button>
+        </div>
+
+        <p>Comandos: <strong id="lista-comandos">nenhum</strong></p>
+
+        <div class="botoes-linha">
+          <button onclick="executarComandos()">Navegar</button>
+          <button class="secundario" onclick="limparComandos()">Limpar</button>
+        </div>
+
+        <p id="feedback1" class="feedback"></p>
+      </div>
+    </section>
+
+    <section id="tela-teoria2" class="tela">
+      <div class="card">
+        <span class="badge">Pergaminho da Fase 2</span>
+        <h2>Rotas em Fluxograma</h2>
+        <p>
+          Fluxograma é uma representação visual de um processo. Na aventura, ele funciona como uma rota com etapas organizadas para cumprir uma missão pirata.
+        </p>
+        <p>
+          Em vez de escrever apenas frases soltas, o fluxograma ajuda a visualizar o caminho: início da missão, ações, decisões e chegada ao objetivo.
+        </p>
+
+        <div class="exemplo fluxo-exemplo">
+          <h3>Exemplo de rota:</h3>
+          <div class="fluxo-demo">
+            <span>Início</span>
+            <span>↓</span>
+            <span>Ler o mapa</span>
+            <span>↓</span>
+            <span>Escolher a rota segura</span>
+            <span>↓</span>
+            <span>Chegar ao baú</span>
+          </div>
+        </div>
+
+        <p class="objetivo-aprendizagem">
+          Na prática, você irá organizar blocos na ordem correta para montar a rota da missão.
+        </p>
+
+        <button onclick="irParaFase2()">Ir para a prática</button>
+      </div>
+    </section>
+
+    <section id="tela-fase2" class="tela">
+      <div class="card">
+        <div class="topo-fase">
+          <div>
+            <span class="badge">Prática 2</span>
+            <h2>Rota da Ilha</h2>
+          </div>
+          <div class="status">
+            <span>XP: <strong id="xp2">0</strong></span>
+            <span>Acertos: <strong id="acertos2">0</strong>/3</span>
+          </div>
+        </div>
+
+        <p class="instrucao">
+          Organize os blocos na ordem correta para completar a missão pirata.
+        </p>
+
+        <div class="problema" id="problemaFluxo"></div>
+
+        <div id="opcoesFluxo" class="opcoes"></div>
+
+        <h3>Sua rota:</h3>
+        <div id="respostaFluxo" class="resposta"></div>
+
+        <div class="botoes-linha">
+          <button onclick="verificarFluxograma()">Conferir rota</button>
+          <button class="secundario" onclick="limparFluxograma()">Limpar</button>
+        </div>
+
+        <p id="feedback2" class="feedback"></p>
+      </div>
+    </section>
+
+    <section id="tela-teoria3" class="tela">
+      <div class="card">
+        <span class="badge">Pergaminho da Fase 3</span>
+        <h2>Código Pirata em JavaScript</h2>
+        <p>
+          Programar é escrever instruções para que o computador execute uma tarefa. Nesta jornada, usamos JavaScript como se fosse o código secreto do navio pirata.
+        </p>
+
+        <div class="grid">
+          <article>
+            <h3>Mensagem no navio</h3>
+            <p><code>console.log("Olá");</code> exibe uma mensagem no console.</p>
+          </article>
+          <article>
+            <h3>Baú de valores</h3>
+            <p><code>let idade = 18;</code> guarda um valor para usar depois.</p>
+          </article>
+          <article>
+            <h3>Decisão da rota</h3>
+            <p><code>if</code> permite executar algo apenas se uma condição for verdadeira.</p>
+          </article>
+          <article>
+            <h3>Lógica</h3>
+            <p>O código precisa estar escrito com a sintaxe correta para funcionar.</p>
+          </article>
+        </div>
+
+        <p class="objetivo-aprendizagem">
+          Na prática, você irá escolher qual trecho de código ajuda o pirata a completar cada missão.
+        </p>
+
+        <button onclick="irParaFase3()">Ir para a prática</button>
+      </div>
+    </section>
+
+    <section id="tela-fase3" class="tela">
+      <div class="card">
+        <div class="topo-fase">
+          <div>
+            <span class="badge">Prática 3</span>
+            <h2>Decifrando Códigos Piratas</h2>
+          </div>
+          <div class="status">
+            <span>XP: <strong id="xp3">0</strong></span>
+            <span>Acertos: <strong id="acertos3">0</strong>/3</span>
+          </div>
+        </div>
+
+        <p class="instrucao">
+          Escolha o código correto para resolver o desafio do capitão.
+        </p>
+
+        <div class="problema" id="problemaCodigo"></div>
+        <div id="opcoesCodigo" class="opcoes codigo"></div>
+
+        <p id="feedback3" class="feedback"></p>
+      </div>
+    </section>
+
+    <section id="tela-final" class="tela">
+      <div class="card certificado">
+        <h2>Certificado do Tesouro Lógico</h2>
+        <p>Certificamos que</p>
+        <input id="nomeAluno" placeholder="Digite seu nome" />
+        <h3>concluiu a jornada CodeQuest e encontrou o Tesouro Lógico</h3>
+        <p>
+          Completando conteúdos teóricos e desafios práticos de pensamento computacional,
+          algoritmos, fluxogramas e programação.
+        </p>
+        <p class="xp-final">XP total: <strong id="xpTotal">0</strong></p>
+        <p class="xp-final">Nível final: <strong id="nivelFinal">Marinheiro</strong></p>
+        <div class="badges-certificado">
+          <h3>Badges conquistadas</h3>
+          <div id="badgesFinal"></div>
+        </div>
+        <button onclick="imprimirCertificado()">Imprimir / Salvar PDF</button>
+        <button class="secundario" onclick="reiniciar()">Jogar novamente</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
